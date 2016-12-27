@@ -32,8 +32,6 @@ namespace SteamTradeEmailActivator
             label_status.ForeColor = Color.Blue;
             label_status.Text = "In Progress...";
 
-            var emails = new Glob(Path.Combine(ExecutableDirectory, "*.*"));
-
             string error_path = Path.Combine(ExecutableDirectory, "error");
             string emails_path = Path.Combine(ExecutableDirectory, "emails");
 
@@ -46,6 +44,7 @@ namespace SteamTradeEmailActivator
                 Directory.CreateDirectory(emails_path);
             }
 
+            var emails = new Glob(Path.Combine(emails_path, "*.*"));
             string email_html = "";
 
             foreach (var val in emails.Expand().ToList())
@@ -67,7 +66,7 @@ namespace SteamTradeEmailActivator
                 }
                 else
                 {
-                    File.Move(val.FullName, Path.GetDirectoryName(val.FullName) + "\\error\\" + val.Name);
+                    File.Move(val.FullName, Path.Combine(error_path, val.Name));
                     //File.WriteAllText(Path.GetDirectoryName(val.FullName) + "\\error\\" + val.Name + ".error", email_result);
                     MessageBox.Show("Ошибка поиска TradeConfirmation! Подсунули не тот файл... он перемещён в папку error\r\nОбязательно проверить! Не запускать снова!");
                     label_status.ForeColor = Color.Red;
@@ -90,7 +89,7 @@ namespace SteamTradeEmailActivator
                         try_count++;
                         if(try_count > 5)
                         {
-                            File.Move(val.FullName, Path.GetDirectoryName(val.FullName) + "\\error\\" + val.Name);
+                            File.Move(val.FullName, Path.Combine(error_path, val.Name));
                             label_status.ForeColor = Color.Red;
                             label_status.Text = "Error";
                             MessageBox.Show("После 5-и попыток не удалось подтвердить обмен!\r\nФайл перемещён в папку error\r\nОбязательно проверить! Не запускать снова!");
@@ -128,7 +127,7 @@ namespace SteamTradeEmailActivator
                 }
                 else
                 {
-                    File.Move(val.FullName, Path.GetDirectoryName(val.FullName) + "\\error\\" + val.Name);
+                    File.Move(val.FullName, Path.Combine(error_path, val.Name));
                     //File.WriteAllText(Path.GetDirectoryName(val.FullName) + "\\error\\" + val.Name + ".error", email_result);
                     //MessageBox.Show("Ошибка поиска tradeoffer! Сорей всего тупит стим... файл перемещён в папку error\r\nОбязательно проверить! Не запускать снова!");
                     label_status.ForeColor = Color.Red;
