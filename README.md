@@ -1,6 +1,6 @@
 # SteamTradeEmailActivator
 
-[![GitHub Release](https://img.shields.io/github/release/Shmurdik/SteamTradeEmailActivator.svg?label=Latest&maxAge=3600)](https://github.com/Shmurdik/SteamTradeEmailActivator/releases/latest)
+[![GitHub Release](https://img.shields.io/github/release/Shmurdik/SteamTradeEmailActivator.svg?label=Latest&maxAge=3600&colorB=green)](https://github.com/Shmurdik/SteamTradeEmailActivator/releases/latest)
 [![Github Downloads](https://img.shields.io/github/downloads/Shmurdik/SteamTradeEmailActivator/latest/total.svg?label=Downloads&maxAge=60&colorB=green)](https://github.com/Shmurdik/SteamTradeEmailActivator/releases/latest)
 
 [![Paypal.me Donate](https://img.shields.io/badge/Paypal.me-donate-blue.svg)](https://www.paypal.me/Shmurdik/1usd)
