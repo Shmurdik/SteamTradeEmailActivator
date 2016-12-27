@@ -8,4 +8,4 @@
 
 ***
 
-Copy trade emails to "emails" folder and launch activator.
+Launch app, copy trade emails to "emails" folder and click "Start".
